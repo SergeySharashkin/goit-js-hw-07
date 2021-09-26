@@ -30,6 +30,12 @@ function onClick(evt) {
   }
   console.log(evt.target.dataset.source);
 }
+const styleEL = document.createElement("link");
+styleEL.rel = "stylesheet";
+styleEL.src = "/node_modules/dist/basicLightbox.min.css";
+const scriptEl = document.createElement("script");
+scriptEl.src = "/node_modules/basiclightbox/dist/basicLightbox.min.css";
+document.body.appendChild(scriptEl);
 // event.preventDefault()
 // document.querySelector('button.image').onclick = () => {
 
