@@ -24,31 +24,23 @@ function createGalleryItemsMarkup(galleryItems) {
     .join("");
 }
 galleryEl.addEventListener("click", onClick);
-let isBigImg = '';
+let isBigImg;
 function onClick(evt) {
   evt.preventDefault();
   isBigImg = evt.target.classList.contains("gallery__image");
   if (!isBigImg) {
     return;
   }
-  
-}
-
-
-// const styleEL = document.createElement("link");
-// styleEL.rel = "stylesheet";
-// styleEL.src = "https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css";
-// document.head.appendChild(styleEL);
-// const scriptEl = document.createElement("script");
-// scriptEl.src = "https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js";
-// document.body.appendChild(scriptEl);
-
-
-// import * as basicLightbox from 'basiclightbox'
-const instance = basicLightbox.create(`
-    <div class="modal">
-    <img  src="${isBigImg}">
-    </div>
+  console.log(isBigImg)
+  const instance = basicLightbox.create(`
+  <div class="modal">
+  <img  src="${isBigImg}">
+  </div>
 `)
 
-instance.show()
+instance.show()}
+  
+
+
+
+
