@@ -1,6 +1,8 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
+
+
 console.log(galleryItems);
 const galleryEl = document.querySelector(".gallery");
 const galleryMarkup = createGalleryItemsMarkup(galleryItems);
@@ -30,18 +32,22 @@ function onClick(evt) {
   }
   console.log(evt.target.dataset.source);
 }
+
+
 const styleEL = document.createElement("link");
 styleEL.rel = "stylesheet";
-styleEL.src = "/node_modules/basiclightbox/dist/basicLightbox.min.css";
+styleEL.src = "https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css";
+document.head.appendChild(styleEL);
 const scriptEl = document.createElement("script");
-scriptEl.src = "/node_modules/basiclightbox/dist/basicLightbox.min.css";
+scriptEl.src = "https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js";
 document.body.appendChild(scriptEl);
-// event.preventDefault()
-// document.querySelector('button.image').onclick = () => {
 
-// 	basicLightbox.create(`
-// 		<img width="1400" height="900" src="https://placehold.it/1400x900">
-// 	`).show()
 
-// }
-/* <button class="image">img</button> */
+import * as basicLightbox from 'basiclightbox'
+const instance = basicLightbox.create(`
+    <div class="modal">
+    <img  src="${isBigImg}">
+    </div>
+`)
+
+instance.show()
