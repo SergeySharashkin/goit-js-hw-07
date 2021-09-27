@@ -24,13 +24,14 @@ function createGalleryItemsMarkup(galleryItems) {
     .join("");
 }
 galleryEl.addEventListener("click", onClick);
+let isBigImg = '';
 function onClick(evt) {
   evt.preventDefault();
-  const isBigImg = evt.target.classList.contains("gallery__image");
+  isBigImg = evt.target.classList.contains("gallery__image");
   if (!isBigImg) {
     return;
   }
-  console.log(evt.target.dataset.source);
+  
 }
 
 
@@ -43,7 +44,7 @@ function onClick(evt) {
 // document.body.appendChild(scriptEl);
 
 
-import * as basicLightbox from 'basiclightbox'
+// import * as basicLightbox from 'basiclightbox'
 const instance = basicLightbox.create(`
     <div class="modal">
     <img  src="${isBigImg}">
