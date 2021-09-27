@@ -24,17 +24,17 @@ function createGalleryItemsMarkup(galleryItems) {
     .join("");
 }
 galleryEl.addEventListener("click", onClick);
-let isBigImg;
+
 function onClick(evt) {
   evt.preventDefault();
-  isBigImg = evt.target.classList.contains("gallery__image");
+  const isBigImg = evt.target.classList.contains("gallery__image");
   if (!isBigImg) {
     return;
   }
-  console.log(isBigImg)
+  const sourceEl = (evt.target.dataset.source)
   const instance = basicLightbox.create(`
   <div class="modal">
-  <img  src="${isBigImg}">
+  <img  src="${sourceEl}">
   </div>
 `)
 
