@@ -17,11 +17,13 @@ function createGalleryItemsMarkup(galleryItems) {
 // import SimpleLightbox from "simplelightbox";
 let gallery = new SimpleLightbox('.gallery a');
 gallery.on('show.simplelightbox', function () {
-   gallery.captions	= 1;
-  
-    console.log(gallery.captions)
+//    gallery.captions	= 1;
+console.log(gallery)
+console.log(gallery.currentImageIndex)
+return
+// console.log(gallery.target)   
 })
-
+ 
 // galleryEl.addEventListener("click", onClick);
 // function onClick(evt) {
 //     evt.preventDefault();
@@ -29,12 +31,12 @@ gallery.on('show.simplelightbox', function () {
 //     if (!isBigImg) {
 //       return;
 //     }
-//     const sourceEl = (evt.target.dataset.source)
-//     const instance = basicLightbox.create(`
-//     <div class="modal">
-//     <img src="${sourceEl}">
-//     </div>
-//   `)
+//     const sourceEl = (evt.target.alt)
+//     const instance =  isBigImg.insertAdjacentHTML(`
+// //     <h2 class="text">
+// //     ${sourceEl}
+// //     </h2>
+// //   `)
   
-//   instance.show()
+// //   instance.show()
 // }
