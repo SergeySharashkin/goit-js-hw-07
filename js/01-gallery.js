@@ -1,9 +1,6 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-
-
-console.log(galleryItems);
 const galleryEl = document.querySelector(".gallery");
 const galleryMarkup = createGalleryItemsMarkup(galleryItems);
 galleryEl.insertAdjacentHTML("beforeend", galleryMarkup);
@@ -34,13 +31,18 @@ function onClick(evt) {
   const sourceEl = (evt.target.dataset.source)
   const instance = basicLightbox.create(`
   <div class="modal">
-  <img  src="${sourceEl}">
+  <img src="${sourceEl}">
   </div>
 `)
 
 instance.show()}
-  
 
 
-
+//   let ASD = window.addEventListener('keydown', function(e){
+//     if((e.key=='Escape'||e.key=='Esc')){
+//         e.preventDefault();
+//         return false;
+//     }
+// }, true)
+// console.log(ASD)
 
