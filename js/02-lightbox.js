@@ -7,8 +7,8 @@ galleryEl.insertAdjacentHTML("beforeend", galleryMarkup);
 function createGalleryItemsMarkup(galleryItems) {
   return galleryItems
     .map(({ preview, original, description }) => {
-      return `<a class="gallery__item" href="${original}">
-      <img class="gallery__image" src="${preview}" alt="${description}" />
+      return `<a class="gallery__item" href="${original}" data-title="${description}">
+      <img class="gallery__image" src="${preview}" alt="${description} " />
     </a>`;
     })
     .join("");
@@ -19,7 +19,7 @@ let gallery = new SimpleLightbox('.gallery a');
 gallery.on('show.simplelightbox', function () {
 //    gallery.captions	= 1;
 console.log(gallery)
-console.log(gallery.currentImageIndex)
+console.log(gallery.captions)
 return
 // console.log(gallery.target)   
 })
