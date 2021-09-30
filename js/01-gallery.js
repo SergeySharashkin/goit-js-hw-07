@@ -21,7 +21,7 @@ function createGalleryItemsMarkup(galleryItems) {
     .join("");
 }
 galleryEl.addEventListener("click", onClick);
-
+let instance;
 function onClick(evt) {
   evt.preventDefault();
   const isBigImg = evt.target.classList.contains("gallery__image");
@@ -29,20 +29,30 @@ function onClick(evt) {
     return;
   }
   const sourceEl = (evt.target.dataset.source)
-  const instance = basicLightbox.create(`
+const instance = basicLightbox.create(`
   <div class="modal">
   <img src="${sourceEl}">
   </div>
 `)
 
-instance.show()}
+instance.show();
 
+window.addEventListener('keydown', function(e){
+  
+      if((e.key=='Escape'||e.key=='Esc')){
+          e.preventDefault();
+          instance.close()
+      }
+  })
 
-//   let ASD = window.addEventListener('keydown', function(e){
+}
+ 
+// window.addEventListener('keydown', function(e){
+  
 //     if((e.key=='Escape'||e.key=='Esc')){
 //         e.preventDefault();
-//         return false;
+//         instance.close()
 //     }
-// }, true)
-// console.log(ASD)
+// })
+
 
