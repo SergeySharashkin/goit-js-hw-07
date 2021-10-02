@@ -36,16 +36,19 @@ const instance = basicLightbox.create(`
 `)
 
 instance.show();
-if (instance.show()) {
-  window.addEventListener('keydown', function(e){
+const modalCloser = (e) => {
   
-      if((e.key=='Escape'||e.key=='Esc')){
-          e.preventDefault();
-          instance.close()
-      }
-  })}
-
-
+  if((e.key=='Escape'||e.key=='Esc')){
+      e.preventDefault();
+      instance.close()
+  }
+}
+if (instance.show()) {
+  window.addEventListener('keydown', modalCloser)
+  }
+if (!document.querySelector('.modal')) {
+  window.removeEventListener('keydown', modalCloser)
+}
 }
  
 // window.addEventListener('keydown', function(e){
